@@ -1,7 +1,5 @@
 ---
 title: Inviwo
-tags: [getting_started, concept]
-keywords: gettingstarted, concept
 summary: "Inviwo User and Developer Guides"
 sidebar: manual_sidebar
 permalink: manual_index.html
