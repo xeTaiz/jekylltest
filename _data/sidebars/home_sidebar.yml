@@ -1,48 +1,20 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
-
 entries:
-- title: Sidebar
-  levels: one
+- title: sidebar
+  product: Inviwo
   folders:
-
-  - title: Getting Started
-    output: web, pdf
+  - title:
+    output: web
+    type: frontmatter
     folderitems:
-    - title: The Graphical User Interface
-      output: web, pdf
-      url: manual-gettingstarted-ui.html
+    - title: Documentation
+      output: web
+      url: /manual_index.html
 
-    - title: Building Inviwo
-      output: web, pdf
-      url: manual-gettingstarted-build.html
+    - title: C++ API
+      output: web
+      url: /cppapi_index.html
 
-    - title: Network Concepts
-      output: web, pdf
-      url: manual-gettingstarted-network.html
-
-  - title: Developer Guides
-    output: web, pdf
-    folderitems:
-    - title: Data Structures & Memory Representations
-      output: web, pdf
-      url: manual-devguide-data-memory.html
-
-    - title: Generate new modules/processors
-      output: web, pdf
-      url: manual-devguide-meta.html
-
-    - title: Create a processor
-      output: web, pdf
-      url: manual-devguide-build-processor.html
-
-    - title: Create a property
-      output: web, pdf
-      url: manual-devguide-build-property.html
-
-    - title: Python Processors
-      output: web, pdf
-      url: manual-devguide-python-processors.html
-
-    - title: InviwoPy
-      output: web, pdf
-      url: manual-devguide-inviwopy.html
+    - title: Python API
+      output: web
+      url: /pyapi_index.html

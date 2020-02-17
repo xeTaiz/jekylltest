@@ -2,7 +2,7 @@
 
 entries:
 - title: sidebar
-  product: Inviwo Documentation
+  product: Inviwo
   folders:
 
   - title: Getting Started
@@ -46,3 +46,18 @@ entries:
     - title: InviwoPy
       output: web, pdf
       url: manual-devguide-inviwopy.html
+
+  - title: Video Guides
+    output: web
+    folderitems:
+      - title: Getting Started
+        output: web
+        external_url: https://www.youtube.com/watch?v=eF26VhXo4Gs
+
+      - title: Network Evaluation & Event Propagation
+        output: web
+        external_url: https://www.youtube.com/watch?v=KK92UQqk800
+
+      - title: Data Structures & Memory Representations
+        output: web
+        external_url: https://www.youtube.com/watch?v=wrYq5anGmsA
