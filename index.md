@@ -1,7 +1,7 @@
 ---
 title: Inviwo
-sidebar: manual_sidebar
 permalink: index.html
+sidebar: none
 ---
 
 # Inviwo Documentation
