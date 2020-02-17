@@ -10,42 +10,42 @@ entries:
     folderitems:
     - title: The Graphical User Interface
       output: web, pdf
-      url: manual-gettingstarted-ui.html
+      url: /manual-gettingstarted-ui.html
 
     - title: Building Inviwo
       output: web, pdf
-      url: manual-gettingstarted-build.html
+      url: /manual-gettingstarted-build.html
 
     - title: Network Concepts
       output: web, pdf
-      url: manual-gettingstarted-network.html
+      url: /manual-gettingstarted-network.html
 
   - title: Developer Guides
     output: web, pdf
     folderitems:
     - title: Data Structures & Memory Representations
       output: web, pdf
-      url: manual-devguide-data-memory.html
+      url: /manual-devguide-data-memory.html
 
     - title: Generate new modules/processors
       output: web, pdf
-      url: manual-devguide-meta.html
+      url: /manual-devguide-meta.html
 
     - title: Create a processor
       output: web, pdf
-      url: manual-devguide-build-processor.html
+      url: /manual-devguide-build-processor.html
 
     - title: Create a property
       output: web, pdf
-      url: manual-devguide-build-property.html
+      url: /manual-devguide-build-property.html
 
     - title: Python Processors
       output: web, pdf
-      url: manual-devguide-python-processors.html
+      url: /manual-devguide-python-processors.html
 
     - title: InviwoPy
       output: web, pdf
-      url: manual-devguide-inviwopy.html
+      url: /manual-devguide-inviwopy.html
 
   - title: Video Guides
     output: web
