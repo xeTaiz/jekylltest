@@ -6,8 +6,6 @@ summary: "Learn about the different concepts used in Inviwo networks"
 sidebar: manual_sidebar
 permalink: manual-gettingstarted-network.html
 folder: manual
-has_video: true
-publish: true
 ---
 # The Inviwo Network
 Inviwo networks are built around a few concepts in order to keep the resulting graphs clean and deterministic.

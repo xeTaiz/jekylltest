@@ -6,7 +6,6 @@ summary: "Learn to generate processor or module templates."
 sidebar: manual_sidebar
 permalink: manual-devguide-meta.html
 folder: manual
-publish: true
 ---
 # Generating files for Processors, Properties and Modules
 
