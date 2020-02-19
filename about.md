@@ -1,5 +1,5 @@
 ---
-title: About
+title:
 permalink: about.html
 sidebar: none
 toc: false
