@@ -6,10 +6,13 @@ summary: "Learn about the different concepts used in Inviwo networks"
 sidebar: manual_sidebar
 permalink: manual-gettingstarted-network.html
 folder: manual
+has_video: true
+publish: true
 ---
 # The Inviwo Network
 Inviwo networks are built around a few concepts in order to keep the resulting graphs clean and deterministic.
-This guide explains those concepts and clarifies the chronological order of processor execution.
+This guide explains those concepts and clarifies the chronological order of processor execution. We also have an accompanying video tutorial:
+{% include youtube.html id="KK92UQqk800" caption="Network Evaluation and Event Propagation" %}
 
 Overall the networks are built to roughly represent the *Visualization Pipeline*, thus there is a data-flow from the
 top to the bottom of the network. Note that there must not be cycles in the graph!
@@ -27,7 +30,7 @@ This triggers a *Mouse Move Event* which is propagated upwards. In the figure be
 it is consumed by the *VolumeRaycaster*, but it does not reach either the *EntryExitPoints*, nor the *MeshRenderer*.
 As a reaction to the event, the *VolumeRaycaster* updates its *CameraProperty* and with that invalidates the processor.
 Since the *CameraProperty* is linked to the camera properties of both the *EntryExitPoints* and the *MeshRenderer* processor
-(see Property Linking TODO: link), they are also invalidated due to the change in their camera parameters.
+(see [Property Linking](manual-gettingstarted-ui.html#properties)), they are also invalidated due to the change in their camera parameters.
 
 ![Inviwo Network Flow](images/manual/NetworkExplained.png)
 

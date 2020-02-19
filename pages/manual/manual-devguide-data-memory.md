@@ -6,7 +6,12 @@ summary: "Learn about data structures and memory representations in Inviwo."
 sidebar: manual_sidebar
 permalink: manual-devguide-data-memory.html
 folder: manual
+has_video: true
+publish: true
 ---
+This tutorial has an accompanying video tutorial:
+{% include youtube.html id="wrYq5anGmsA" caption="Data Structures and Memory Representations" %}
+
 # Data Structures
 In Inviwo the main core data structures (`Volume`, `Layer`, `Buffer`) use a pattern of handles and representations. Note that there also exists the `Image` and `Mesh` data structure which are containers of `Layer`s and `Buffer`s respectively. The volume data structure for example has a handle class called `Volume`. The handle class by itself does not have any data, it only stores metadata, and a list of representations. The representations is where the actual data is stored. Therefore, an `Image` or `Mesh` representation is a container for `Layer` and `Buffer` representations of the same representation type. The following first explains the basic data structures and how they relate, then shows what different representations exist and how to use them.
 

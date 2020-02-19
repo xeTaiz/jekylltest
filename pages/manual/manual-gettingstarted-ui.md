@@ -6,11 +6,15 @@ summary: "Get started with Inviwo and its graphical user interface"
 sidebar: manual_sidebar
 permalink: manual-gettingstarted-ui.html
 folder: manual
+has_video: true
+publish: true
 ---
 # The Inviwo Graphical Interface
 This part of the Getting Started Guide explains Inviwo's graphical user interface and the rough concepts
 of its building blocks. The goal of this guide is to give an intuitive feeling for the GUI and enable
 users to build workspaces from existing processors.
+We also have an accompanying video tutorial:
+{% include youtube.html id="eF26VhXo4Gs" caption="Getting Started with the Inviwo Graphical User Interface" %}
 
 ## GUI Overview
 The following image shows Inviwos GUI:
@@ -18,15 +22,15 @@ The following image shows Inviwos GUI:
 ![The Inviwo GUI](images/manual/UI.png)
 
 As you can see, the main area consists of the *Network Editor*,
-surrounded by the [*Processor*](#markdown-header-processors) *List* on the left, the selected processor's
-[*Properties*](#markdown-header-properties) to the right and the *Debug Console* with log messages below.
+surrounded by the [*Processor*](#processors) *List* on the left, the selected processor's
+[*Properties*](#properties) to the right and the *Debug Console* with log messages below.
 
 You can drag processors from the *Processor List* into the *Network Editor* using drag and drop.
 Processors are the basic building blocks of the network and perform one encapsulated action.
-Each processor can define its required input and produced output data through [*Ports*](#markdown-header-ports),
+Each processor can define its required input and produced output data through [*Ports*](#ports),
 which can be connected using the mouse. The resulting network represents a directed acyclic graph where
 the nodes are processors and the edges are port connections.
-In addition to inputs and outputs, a processor's [*Properties*](#markdown-header-properties) can be edited
+In addition to inputs and outputs, a processor's [*Properties*](#properties) can be edited
 on the right when the processor is selected. Those properties represent the configuration of the processor and
 expose parameters to the user. Changing a property updates the network's results interactively.
 Examples for processors include:
@@ -52,7 +56,7 @@ The whole network, namely all the processors, their connections and properties c
 - Holding `Shift` while dropping the processor in the network will attempt to connect processors above automatically.
 
 - Some properties are linked automatically when initialized, for example the camera. Holding `Alt` while dropping
-  the processor will prevent automatic linking. (See [Property Linking](#markdown-header-linking))
+  the processor will prevent automatic linking. (See [Property Linking](#properties))
 </details>
 
 
@@ -63,9 +67,9 @@ Processors are the basic building blocks for an Inviwo network. The actual graph
 
 First and foremost, the *inports and outports* show to which other processors this processor is connected, encoding the received and produced data types with colors. Also, they show immediately which information is mandatory and what is additional optional input.
 The *Status Light* signals whether the processor has successfully produced an output, meaning it has all necessary inputs connected and could process them without any fatal errors.
-Lastly, you can connect a processors properties to (the same type of) properties in other processors by dragging a connection from the *Property Link Connector* to another processor. The actual linking mechanism is explaiend [below](#markdown-header-linking).
+Lastly, you can connect a processors properties to (the same type of) properties in other processors by dragging a connection from the *Property Link Connector* to another processor. The actual linking mechanism is explaiend [below](#properties).
 
-To create your own custom processors, look at TODO: link to tut
+To create your own custom processors, check out [this guide](manual-devguide-build-processor)
 
 ## Ports
 As explained above, a processor's ports determine the inputs and outputs of the operation that is executed in a processor. A dot inside the port marks that the port is optional and the processor should work without connecting it. A port's color shows of which type the data is that flows through it, for example red for volumes, yellow for meshes and blue for images. To directly inspect the data that flows through a port, you can look at the *Port Inspector* by hovering over a port:
@@ -78,7 +82,7 @@ Note that some inports are *multi inports*, meaning you can connect multiple out
 ## Properties
 Properties let you define the configuration of a processor. That means they contain all parameters of a processor in an organized way, allowing for easy manipulation using boxes, sliders and widgets like a color picker.
 
-In addition to simple manipulation of parameters, properties can be *linked* together with properties from other processors in order to synchronize. Upon dragging a link from the *Property Link Connector* (see figure in the [Processors](#markdown-header-processors) section) onto another processor, the following window opens:
+In addition to simple manipulation of parameters, properties can be *linked* together with properties from other processors in order to synchronize. Upon dragging a link from the *Property Link Connector* (see figure in the [Processors](#processors) section) onto another processor, the following window opens:
 
 ![Property Linking](images/manual/PropertyLinks.png)
 

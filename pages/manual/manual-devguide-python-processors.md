@@ -6,6 +6,7 @@ summary: "Learn to create Python processors for use in Inviwo"
 sidebar: manual_sidebar
 permalink: manual-devguide-python-processors.html
 folder: manual
+publish: true
 ---
 # Python Processors
 You can define Inviwo processors using Python instead of C++. Python often offers simpler means to implement certain functionality and brings a large palette of libraries that can easy processor development. However note, that Python in general runs a lot slower than C++ and should thus be avoided for performance critical processors. The following explains how Python processors can be created, how an Inviwo processor is properly defined in Python and how you can easily access data using NumPy.

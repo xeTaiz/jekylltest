@@ -6,6 +6,7 @@ summary: "Learn to create your own C++ processors for use in Inviwo"
 sidebar: manual_sidebar
 permalink: manual-devguide-build-processor.html
 folder: manual
+publish: true
 ---
 # Create your own Processor
 This guide will walk you through the creation of a new processor.
@@ -13,7 +14,7 @@ This guide will walk you through the creation of a new processor.
 ## Creating the processor
 There are three ways to create a new processor in Inviwo:
 1. **Using the GUI**: Just click the `Tools -> Create Sources -> Add Processor` button, navigate to `<module-dir>/src/processors` and specify your processor name in PascalCase (e.g. `MyNewProcessor`).
-2. **Using the Inviwo-meta-cli**: Check out the Inviwo-meta docs (TODO: link)
+2. **Using the Inviwo-meta-cli**: Check out the [Inviwo-meta docs](manual-devguide-meta.html)
 3. **Manually**:
     In order to create a new processor in Inviwo, you need to create the source files for the processor itself, register it in the according module and add it to the Cmake files.
     Inviwo-meta does all of those things for you automatically. The following describes the files that need to be created or modified:
