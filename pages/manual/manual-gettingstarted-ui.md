@@ -6,8 +6,6 @@ summary: "Get started with Inviwo and its graphical user interface"
 sidebar: manual_sidebar
 permalink: manual-gettingstarted-ui.html
 folder: manual
-has_video: true
-publish: true
 ---
 # The Inviwo Graphical Interface
 This part of the Getting Started Guide explains Inviwo's graphical user interface and the rough concepts

@@ -6,7 +6,6 @@ summary: "Learn to create your own C++ properties for use in Inviwo"
 sidebar: manual_sidebar
 permalink: manual-devguide-build-property.html
 folder: manual
-publish: true
 ---
 # Build your own Property
 This guide will walk you through the creation of a new property.

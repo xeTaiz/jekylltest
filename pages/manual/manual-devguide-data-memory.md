@@ -6,8 +6,6 @@ summary: "Learn about data structures and memory representations in Inviwo."
 sidebar: manual_sidebar
 permalink: manual-devguide-data-memory.html
 folder: manual
-has_video: true
-publish: true
 ---
 This tutorial has an accompanying video tutorial:
 {% include youtube.html id="wrYq5anGmsA" caption="Data Structures and Memory Representations" %}

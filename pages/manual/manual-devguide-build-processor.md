@@ -6,7 +6,6 @@ summary: "Learn to create your own C++ processors for use in Inviwo"
 sidebar: manual_sidebar
 permalink: manual-devguide-build-processor.html
 folder: manual
-publish: true
 ---
 # Create your own Processor
 This guide will walk you through the creation of a new processor.
