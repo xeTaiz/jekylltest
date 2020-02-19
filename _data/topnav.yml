@@ -11,3 +11,5 @@ topnav:
       url: /cppapi_index.html
     - title: Python API
       url: /pyapi_index.html
+    - title: About
+      url: /about.html

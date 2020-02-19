@@ -199,3 +199,36 @@ insert_promo: true
         <!--//container-->
         <!-- The Modal -->
 </section>
+<section id="citation" class="citation section">
+    <div class="container">
+        <div class="citation-inner">
+            <h2 class="title text-center">Citation</h2>
+            <p>If you use the Inviwo code for your research, please cite our paper:</p>
+            <a href="https://ieeexplore.ieee.org/document/8730513">Inviwo - A Visualization System with Usage Abstraction Levels</a>
+            <div class="citation-codeblock">
+                <a class="btn btn-cta-primary js-tooltip js-copy"  data-toggle="tooltip" data-placement="top" data-copy="@ARTICLE{8730513,
+                    author={D. {Jönsson} and P. {Steneteg} and E. {Sundén} and R. {Englund} and S. {Kottravel} and M. {Falk} and A. {Ynnerman} and I. {Hotz} and T. {Ropinski}},
+                    journal={IEEE Transactions on Visualization and Computer Graphics},
+                    title={Inviwo - A Visualization System with Usage Abstraction Levels},
+                    year={2019},
+                    doi={10.1109/TVCG.2019.2920639},
+                    ISSN={1077-2626},
+                    }" title="Copy BibTeX to clipboard."><i class="fa fa-clipboard"></i>COPY</a>
+                <pre>
+<code>
+    @Article{inviwo2019,
+        author   = {J{\"o}nsson, Daniel and Steneteg, Peter and Sund{\'e}n, Erik and Englund, Rickard and Kottravel, Sathish and Falk, Martin and Ynnerman, Anders and Hotz, Ingrid and Ropinski, Timo},
+        title    = {Inviwo - A Visualization System with Usage Abstraction Levels},
+        journal  = {IEEE Transactions on Visualization and Computer Graphics},
+        year     = {2019},
+        doi      = {10.1109/TVCG.2019.2920639},
+        ISSN     = {1077-2626},
+      }
+</code>
+                </pre>
+            </div>
+        </div>
+            <!--//funding-inner-->
+    </div>
+        <!--//container-->
+</section>

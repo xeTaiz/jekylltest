@@ -1656,7 +1656,7 @@ pre code {
 .gallery .block-left,
 .gallery .block-right {
   margin: 30px 0 30px 0;
-  text-align: justify;
+  text-align: left;
 }
 .gallery .block-left img {
   float: left;
@@ -2074,7 +2074,7 @@ pre code {
 }
 /* ======= Citation Section ======= */
 .citation {
-  padding: 80px 0;
+  padding: 10px 0;
   background: #f5f5f5;
 }
 .citation-codeblock{
@@ -2148,7 +2148,7 @@ pre code {
 
 /* ======= Funding Section ======= */
 .funding {
-  padding: 80px 0;
+  padding: 10px 0;
   background: #f5f5f5;
 }
 .funding .title {
@@ -2159,7 +2159,7 @@ pre code {
 .funding .funding-inner {
   max-width: 800px;
   background: #fff;
-  padding: 30px;
+  padding: 20px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -2190,9 +2190,9 @@ pre code {
 }
 /* ======= Contact Section ======= */
 .contact {
-  padding: 80px 0;
-  background: #268BD2;
-  color: #fff;
+  padding: 10px 0;
+  /* background: #268BD2; */
+  /* color: #fff; */
 }
 .contact .contact-inner {
   max-width: 760px;
@@ -2218,7 +2218,7 @@ pre code {
 .contact .info .sub-title {
   color: #103A54;
   margin-bottom: 10px;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 .contact .social-icons {
   list-style: none;
