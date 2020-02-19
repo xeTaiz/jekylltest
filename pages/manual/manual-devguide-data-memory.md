@@ -26,7 +26,7 @@ The third big data structure in Inviwo is the `Mesh` which consists of a set of 
 
 Any data structure can have a set of different representations, for example a `Volume` has a `VolumeRAM` representation and a `VolumeGL` representation. The representation basically determines where the data actually is. In general there are representations for `Disk`, `RAM`, `GL` and if needed also `CL`, where the latter refer to *OpenGL* and *OpenCL* representations respectively.
 
-![The `Volume` handle has multiple `Representations`](images/DataStructures.png)
+![The `Volume` handle has multiple `Representations`](images/manual/DataStructures.png)
 
 At any time at least one of the representations should be in a valid state. Whenever we want to access the data of a volume we will ask the `Volume` for a representation of some kind, and the handle is then responsible to try and provide that to us. If the requested representation is valid the handle can just return that representation. Otherwise, it will have to find a valid representation and try to either create the desired representation from that or convert it. (More on conversions below)
 
@@ -40,7 +40,7 @@ For example a typical use case can be that we start with a `Volume` handle with 
 ## Example: Accessing the data in C++
 Now that we know how to get the desired representations, let's see how to safely access the data within using the dispatch concept. We will look at rendering a mesh with its bounding box as an example.
 
-![A workspace to render a mesh with bounding box](images/mesh_bb_render_workspace.png)
+![A workspace to render a mesh with bounding box](images/manual/mesh_bb_render_workspace.png)
 
 Starting in the `Mesh Source`, we load a `Mesh` from disk, thus our `Mesh` handle is initialized with a set of buffers, each containing a `BufferRAM` representation. Note that `Mesh` (and `Buffer`) have no `DiskRepresentation`, while there exist `DiskRepresentation`s for `Volume`, `Image` and `Layer`. However only some readers can actually load a `DiskRepresentation`, depending on how the data is stored on disk. The idea of the `DiskRepresentation` is to only load metadata and to be able to load data into memory partially later to save memory. Some data formats need the whole file to be loaded to memory in order to access all metadata, in which case the loader directly uses a `RAMRepresentation`.
 

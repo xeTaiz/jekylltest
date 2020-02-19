@@ -229,7 +229,7 @@ void MyProcessor::process() {
 ```
 All properties are initialized with an identifier (should be unique inside this processor) and a display name (the name you can see in the GUI). Many properties further require you to set a default value. The `OptionPropertyInt` which resembles a dropdown in the GUI can further take the possible options. Make sure to always check the properties' constructor signatures. We recommend to put the complete initialization directly in the constructor, if possible. Lastly, each property optionally has an invalidation level parameter, which controls whether and how much of the processor needs to be re-executed when the property is changed. For more details on invalidation, see below.
 
-![Resulting properties in the GUI](images/BuildProcessor_ResultingProperties.png)
+![Resulting properties in the GUI](images/manual/BuildProcessor_ResultingProperties.png)
 
 ### Frequently used operations
 Here you can find utilities and easy solutions for common problems.

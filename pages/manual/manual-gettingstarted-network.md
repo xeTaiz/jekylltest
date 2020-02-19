@@ -29,7 +29,7 @@ As a reaction to the event, the *VolumeRaycaster* updates its *CameraProperty* a
 Since the *CameraProperty* is linked to the camera properties of both the *EntryExitPoints* and the *MeshRenderer* processor
 (see Property Linking TODO: link), they are also invalidated due to the change in their camera parameters.
 
-![Inviwo Network Flow](images/NetworkExplained.png)
+![Inviwo Network Flow](images/manual/NetworkExplained.png)
 
 Note: A processor is always re-evaluated when its input changes and different *Invalidation Levels* can be set for properties.
 That means in code you have control over which property changes trigger a re-computation of your network.
