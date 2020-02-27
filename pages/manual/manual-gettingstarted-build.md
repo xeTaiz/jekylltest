@@ -17,7 +17,7 @@ You will need at least
     Also add the cmake binary to your PATH.
 
 - [Qt binaries](https://qt.io/download-open-source/) >= 5.12\
-    Make sure you get the build for the 64 bit version for you Visual Studio version. Also add the Qt binary directory (something like `Qt/5.9.1/msvc2017_64/bin`) to your PATH.
+    Make sure you get the build for the 64 bit version for you Visual Studio version. Also add the Qt binary directory (something like `Qt/5.12.1/msvc2017_64/bin`) to your PATH.
 
 ### Building
 1. `git clone --recurse-submodules https://github.com/inviwo/inviwo`\
