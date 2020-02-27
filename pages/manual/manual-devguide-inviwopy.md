@@ -12,18 +12,13 @@ While [Python Processors](manual-devguide-python-processors.html) allow you to e
 
 ## Building InviwoPy
 To use Inviwopy, you have to build the appropriate `.dll`/`.so` yourself, since it is currently not available through Pypi. To do so, enable the `IVW_MODULE_PYTHON3` and `IVW_MODULE_PYTHON3QT` CMake flags. Next you need to specify the Python executable to which the produced library shall be compatible in the `PYTHON_EXECUTABLE` flag.
-<details>
-<summary>
-Using Inviwopy with Anaconda environments
-</summary>
-<p>
+
+{% include note.html content="Using Inviwopy with Anaconda environments: <br/>
 
 1. Set the `PYTHON_EXECUTABLE` flag to your environment's executable (e.g. `~/.conda/envs/inviwo/bin/python3`)
+<br/>
+2. If not set automatically, also adapt the `PYTHON_LIBRARY` flag to `<conda env>/lib/libpython3.6m.so` (according to your Python version)." %}
 
-2. If not set automatically, also adapt the `PYTHON_LIBRARY` flag to `<conda env>/lib/libpython3.6m.so` (according to your Python version).
-
-</p>
-</details>
 
  Depending on your Python version and operating system this will generate two dynamic libraries with names similar to:
 - `inviwopy.cpython-36m-x76_64-linux-gnu.so`
