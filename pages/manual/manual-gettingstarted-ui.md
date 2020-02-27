@@ -46,16 +46,12 @@ Examples for processors include:
 
 The whole network, namely all the processors, their connections and properties can be saved together as a *Workspace*. Loading a workspace therefore restores the complete state of the network, including all parameters, processor placement, etc.
 
-<details><summary>Pro Tip!</summary>
+{% include tip.html content="<br/>
+ 1. You can re-initialize a processor by dragging the processor from the list on top of the already initialized processor in your network. <br/>
+2. Holding `Shift` while dropping the processor in the network will attempt to connect processors above automatically. <br/>
+3. Some properties are linked automatically when initialized, for example the camera. Holding `Alt` while dropping the processor will prevent automatic linking. (See [Property Linking](#properties))
+" %}
 
- - You can re-initialize a processor by dragging the processor from the list on top of the already initialized processor
-  in your network.
-
-- Holding `Shift` while dropping the processor in the network will attempt to connect processors above automatically.
-
-- Some properties are linked automatically when initialized, for example the camera. Holding `Alt` while dropping
-  the processor will prevent automatic linking. (See [Property Linking](#properties))
-</details>
 
 
 ## Processors
