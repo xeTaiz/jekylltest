@@ -18,10 +18,12 @@ In Inviwo, the `Volume` class wraps volumetric data, more specifically data in a
 
 The `Image` class consists of a set of `Layer`s, usually a color layer (what we would regularly think of as an image), a depth layer and a picking layer.
 As an effect, most `Image` ports in Inviwo actually transfer multiple images in the conventional sense. In this example the `Image` would contain a `Vec3UInt8` color layer, a `Float32` depth layer and a `UInt8` picking layer. Of course you can add more layers to the images in your custom processors as necessary.
-<details>
-<summary>What is a picking layer?</summary>
+
+{% include tip.html content="
+**What is a picking layer?**
+
 The picking layer basically encodes object instance IDs in color, so that a lookup in the picking layer gives the object ID for the pixel of interest. This is used for example to drag'n'drop objects in 3D space.
-</details>
+" %}
 
 The third big data structure in Inviwo is the `Mesh` which consists of a set of `Buffer`s. A `Buffer` is basically a wrapper for some linearly stored data and the `Mesh` holds a list of index buffers and data buffers, such as vertex positions, normals, colors etc.
 
@@ -56,13 +58,13 @@ auto buf = mesh->getBuffer(BufferType::PositionAttrib);   // Get position buffer
 if (buf != nullptr && buf->second->getSize() > 0) {
     const auto minmax = buf->second          // Get actual pointer to buffer
         ->getRepresentation<BufferRAM>()     // Get RAM representation
-        ->dispatch<std::pair<dvec4, dvec4>>( // Dispatch to produce a pair of vec4s as result
+        ->dispatch<std::pair<dvec4, dvec4>>( // Dispatch to produce a pair of vec4s
             [](auto br) { //  Define the lambda for all ValueTypes
-                // br's type in this example: BufferRAMPrecision<ValueType, BufferTarget::Data>
-                // which means it holds values of type ValueType and is a Data buffer
+// br's type in this example: BufferRAMPrecision<ValueType, BufferTarget::Data>
+// which means it holds values of type ValueType and is a Data buffer
                 // ValueType can be extracted from br's complex type like so:
                 using ValueType = util::PrecisionValueType<decltype(br)>;
-                const auto &data = br->getDataContainer(); // Gets you a std::vector<ValueType>&
+                const auto &data = br->getDataContainer(); // std::vector<ValueType>&
                 // Construct result as pair of ValueTypes
                 using Res = std::pair<ValueType, ValueType>;
                 // Initialize result with max and min values of given data type
@@ -74,12 +76,13 @@ if (buf != nullptr && buf->second->getSize() > 0) {
                         // Take component-wise min and max
                         return {glm::min(mm.first, v), glm::max(mm.second, v)};
                 });
-                // Convert to pair of dvec4, as we specified in dispatch's type parameter
-                return std::pair<dvec4, dvec4>{util::glm_convert<dvec4>(minmax.first),
-                                               util::glm_convert<dvec4>(minmax.second)};
+                // Return pair of dvec4, as we specified in dispatch's type parameter
+                return std::pair<dvec4, dvec4>{
+                            util::glm_convert<dvec4>(minmax.first),
+                            util::glm_convert<dvec4>(minmax.second)};
         });
         // minmax now has the lower left and upper right of the meshes bounding box.
-    }
+}
 ```
 We start as expected: first the `Mesh` handle is retrieved, then we find the buffer of interest, which is the vertex position buffer in our case. If this buffer exists, we will request its `BufferRAM` representation. Since this representation already exists in an up-to-date state, it can be retrieved without any memory transfer. On this representation the `dispatch<ResultType>(Lambda)` function is called. The actual data access is limited to the Lambda that is passed to `dispatch()` and the result type must match the given type parameter. The actual computations on the data happens inside this Lambda. If any additional variables from the outside scope are required in the Lambda, they can be passed into the Lambdas scope by adding them into the brackets like so:
 ```cpp

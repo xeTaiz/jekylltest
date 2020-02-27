@@ -31,13 +31,13 @@ If you have created your new processor using the GUI or Inviwo-meta, you can see
 Your processor needs to be a subclass of `Processor` and it needs to override the `void Processor::process()` method. The `process()` method is where a processor's action is implemented.
 Additionally, you can override the `const ProcessorInfo getProcessorInfo() const` method which returns meta information about the processor, like a class identifier (unique, in URI style), name, category, tags etc. Make sure to adjust these appropriately.
 Further, your processor needs to define a constructor to initialize all your properties and a destructor (which will usually be the default destructor).
-<details><summary>Click to expand</summary>
+
+{% include expandible.html title="Show generated example code" content='
 
 This example shows what is generated for the new processor `MyProcessor` in the `postprocessing` module.
 
-### myprocessor.h
-
-```cpp
+**myprocessor.h**
+~~~~~~~~~~~~ cpp
 #pragma once
 
 #include <modules/postprocessing/postprocessingmoduledefine.h>
@@ -65,11 +65,12 @@ private:
 
 }  // namespace inviwo
 
-```
+~~~~~~~~~~~~
 
-### myprocessor.cpp
 
-```cpp
+**myprocessor.cpp**
+
+~~~~~~~~~~~~ cpp
 #include <modules/postprocessing/processors/myprocessor.h>
 
 namespace inviwo {
@@ -98,13 +99,12 @@ void MyProcessor::process() {
 }
 
 }  // namespace inviwo
-
-```
-</details>
-
+~~~~~~~~~~~~
+' %}
+<br/>
 Below we will go through the implementation of an example processor that takes an input image, performs a filter operation and outputs the results.
 
-## Inports and Outports - How to receive and send data to/from other processors
+## Inports and Outports
 Ports are used as the primary way of sending data between processors. You can add ports as private members of your class and initialize them in the constructor. Ports also need to be added to the processor using `addPort()`, otherwise they won't be displayed. Note that the convention is to put optional inports to the right of the processor (added last). If your processor performs some kind of rendering, it should usually also include an optional `ImageInport`, where previously rendered parts of an image can be passed through, so that the processor's outport produces a composited image of the current and previous renderings.
 
 To access data from an inport, you can use the `getData()` method. To output data through an outport, you can use the `setData(...)` method.
@@ -134,7 +134,7 @@ Inside `process()` you can access your inports' data by using `inport_.getData()
 You can also use all your defined properties here. This let's you access all your algorithm's parameters directly from the GUI with automatic updates upon change.
 
 **Example**: Let's have our processor apply gaussian blur to the input image.
-```cpp
+~~~cpp
 // MyProcessor.h (next to the other includes)
 #include <modules/basegl/algorithm/imageconvolution.h>
 
@@ -163,12 +163,15 @@ MyProcessor::MyProcessor()
 
 // MyProcessor.cpp (process())
 void MyProcessor::process() {
-    auto img = inport_.getData();  // Get image from inport
-    // convolution() takes the image layer, kernel width & height, the kernel, and the scale to divide
-    auto filtered = conv_.convolution(*img->getColorLayer(), 3, 3, gaussianKernel_, 16.f);
-    outport_.setData(filtered);    // Output filtered image
+    auto img = inport_.getData(); // Get image from inport
+    auto filtered = conv_.convolution( // Do convolution
+        *img->getColorLayer(),         // image layer to filter
+        3, 3,                          // kernel width, height
+        gaussianKernel_,               // kernel
+        16.f);                         // scale to divide by
+    outport_.setData(filtered); // Output filtered image
 }
-```
+~~~
 For this image filtering processor we make use of the `ImageConvolution` class. In a nutshell it uploads the image as texture to an OpenGL fragment shader `img_convolution.frag`, where the convolution operation is performed. You can find this helper in `modules/basegl/algorithm/imageconvolution.h/cpp`. It's also a great example on how to define shader uniforms and using OpenGL textures.
 
 ## Properties - Make GUI-accessible parameters
@@ -201,9 +204,9 @@ MyProcessor::MyProcessor()
     : Processor()
     , inport_("imageInport")
     , outport_("imageOutport")
-    , enable_("enableToggle", "Enable effect", true) // identifier, display name, default value
-    , mode_("blurMode", "Blur Mode", {      // Dropdown identifier, display name
-        {"gaussian", "Gaussian Blur", 0},   // Option 0 identifier, display name, associated int
+    , enable_("enableToggle", "Enable effect", true) // id, name, default value
+    , mode_("blurMode", "Blur Mode", {      // Dropdown id, name
+        {"gaussian", "Gaussian Blur", 0},   // Option 0 id, name, associated int
         {"box",      "Box Blur",      1}    // Option 1 same for box
     }, 0)                                   // Default value is index 0 -> Gaussian
     , conv_([&]() { this->invalidate(InvalidationLevel::InvalidOutput); }) {
@@ -246,7 +249,7 @@ The `Shader` class can be used to activate shaders and bind uniforms etc. Simila
 ```cpp
 TextureUnit tex_unit;
 utilgl::bindColorTexture(tex_inport, tex_unit.getEnum());
-shader.setUniform("Uniform Name", tex_unit.getUnitNumber()); // shader is initialized in constructor
+shader.setUniform("Uniform Name", tex_unit.getUnitNumber()); // shader is class member
 ```
 Examples for both `Shader` and `TextureUnit` can also be found in `HeightFieldProcessor::process()` (`modules/basegl/src/processors/heightfieldprocessor.cpp`).
 
@@ -273,7 +276,7 @@ volume_ram_repr->dispatch<  std::shared_ptr<Volume>  >([] (auto ram) {
     const size3_t dims = ram->getDimensions();
     // Create a representation of same type as the input volume
     dstRam = std::make_shared<VolumeRAMPrecision< typename ValueType> >(dims);
-    const ValueType* srcVol = ram->getDataTyped(); // This is always const for data coming from inports!
+    const ValueType* srcVol = ram->getDataTyped(); // Data from inports is const
     ValueType* dstData = dstRam->getDataTyped();
 
     for (size_t i = 0; i < (dims.x * dims.y * dims.z); ++i) {

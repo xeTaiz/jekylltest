@@ -13,18 +13,12 @@ The code from the following sections builds up to a simple processor that reads 
 
 ## Building InviwoPy
 To use Inviwopy, you have to build the appropriate `.dll`/`.so` yourself, since it is currently not available through Pypi. To do so, enable the `IVW_MODULE_PYTHON3` and `IVW_MODULE_PYTHON3QT` CMake flags. Next you need to specify the Python executable to which the produced library shall be compatible in the `PYTHON_EXECUTABLE` flag.
-<details>
-<summary>
-Using Inviwopy with Anaconda environments
-</summary>
-<p>
 
+{% include expandible.html title="Using Inviwopy with Anaconda environments" content="
 1. Set the `PYTHON_EXECUTABLE` flag to your environment's executable (e.g. `~/.conda/envs/inviwo/bin/python3`)
 
 2. If not set automatically, also adapt the `PYTHON_LIBRARY` flag to `<conda env>/lib/libpython3.6m.so` (according to your Python version).
-
-</p>
-</details>
+" %}
 
 ## Processor Creation
 In order to create a Python Processor, Inviwo must be built with the Python3 module enabled in CMake. To create a new Python processor, open Inviwo and select `Python > New Python Processor` from the menu. After specifying a processor name, the Python script containing the new processor is created in `$HOME/.inviwo/python_processors/<processor name>.py`. The script is already filled with a processor template containing the required methods etc. The newly created processor is also automatically added to your processor list for immediate use.
@@ -86,7 +80,7 @@ class NumpySource(ivw.Processor):
 This `__init__` defines a volume outport to pass the loaded array to the network and a file property to locate the serialized Numpy array. Note that this `FileProperty` has its `invalidationLevel=InvalidationLevel(2)`, which lets the `FileProperty` invalidate the processors resources upon changing the property. This will automatically call the `initializeResources()` method which will take care of actually loading the Numpy file (see below).
 
 ## NumPy Compatibility
-In order to transfer data between Python and C++, the Inviwo data structures  `Volume` (example below), `Layer` (for `Image`s, [example](https://inviwo.org/assets/media/inviwo-vcbm2019.pdf) slide 34-35) and `Buffer` (for `Mesh`es, [example](https://github.com/inviwo/modules/blob/2f07a0fffe916c413a520644b9fe2e45a3ee60a9/misc/vasp/python/vasputil.py#L109-L123)) can take Numpy arrays (`numpy.ndarray`) for initialization.
+In order to transfer data between Python and C++, the Inviwo data structures  `Volume` (example below), `Layer` (for `Image`, [example](https://inviwo.org/assets/media/inviwo-vcbm2019.pdf) slide 34-35) and `Buffer` (for `Mesh`, [example](https://github.com/inviwo/modules/blob/2f07a0fffe916c413a520644b9fe2e45a3ee60a9/misc/vasp/python/vasputil.py#L109-L123)) can take Numpy arrays (`numpy.ndarray`) for initialization.
 
 Loading a Numpy array from disk, wrapping it in a `Volume` and outputting it to the network can be realized as follows:
 ```python
