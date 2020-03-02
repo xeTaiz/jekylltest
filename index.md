@@ -88,6 +88,7 @@ insert_promo: true
 </section>
 <section id="showcase" class="carousel section">
     <div class="container">
+        <h2 class="title text-center">Gallery</h2>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#showcase" data-slide-to="0" class="active"></li>
@@ -125,7 +126,6 @@ insert_promo: true
 <section id="gallery" class="gallery section">
     <div class="container">
         <div class="gallery-inner">
-            <h2 class="title text-center">Gallery</h2>
             <h3>More Features and Information</h3>
             <p>Check out our <a href="media/inviwo-vcbm2019.pdf">tutorial slides</a> from the 9th EWorkshop on Visual Computing for Biology and Medicine (VCBM2019). We give a brief overview on hoto use Inviwo for rapid prototyping medical applications.</p>
             <p>Inviwo provides many visualization methods for a range of data types such as triangular meshe images, volumes, vector fields and multidimensional arrays.</p>
