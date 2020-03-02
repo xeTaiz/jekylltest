@@ -2,12 +2,13 @@
 <html>
 <head>
     {% include head.html %}
+    {% assign sidebar = site.data.sidebars[page.sidebar].entries[0] %}
     <script>
         $(document).ready(function() {
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: {% if page.full_sidebar %} false {% else %} true {% endif %},
+                accordion: {% if sidebar.accordion %} true {% else %} false {% endif %},
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -16,7 +17,7 @@
                     path: '/'
                 },
                 slide: {
-                    duration: 400,
+                    duration: 0,
                     easing: 'swing'
                 }
             });
@@ -30,7 +31,9 @@
                 e.preventDefault();
                 $("#mysidebar").navgoco('toggle', true);
             });
-
+            {% unless sidebar.accordion %}
+            $("#mysidebar").navgoco('toggle', true);
+            {% endunless %}
         });
 
     </script>

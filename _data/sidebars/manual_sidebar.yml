@@ -3,6 +3,7 @@
 entries:
 - title: sidebar
   product: Inviwo Documentation
+  accordion: false
   folders:
 
   - title: Getting Started
