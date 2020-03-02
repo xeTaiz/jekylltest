@@ -10,7 +10,7 @@
                 caretHtml: '',
                 accordion: {% if sidebar.accordion %} true {% else %} false {% endif %},
                 openClass: 'active', // open
-                save: false, // leave false or nav highlighting doesn't work right
+                save: true, // leave false or nav highlighting doesn't work right
                 cookie: {
                     name: 'navgoco',
                     expires: false,
@@ -31,9 +31,9 @@
                 e.preventDefault();
                 $("#mysidebar").navgoco('toggle', true);
             });
-            {% unless sidebar.accordion %}
+            {% if page.full_sidebar %}
             $("#mysidebar").navgoco('toggle', true);
-            {% endunless %}
+            {% endif %}
         });
 
     </script>

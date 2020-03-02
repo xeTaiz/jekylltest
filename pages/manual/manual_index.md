@@ -3,6 +3,7 @@ title: Inviwo Documentation
 summary: "Inviwo User and Developer Guides"
 permalink: manual_index.html
 sidebar: manual_sidebar
+full_sidebar: true
 folder: manual
 ---
 
