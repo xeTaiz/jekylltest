@@ -36,7 +36,7 @@ Note: A processor is always re-evaluated when its input changes and different *I
 That means in code you have control over which property changes trigger a re-computation of your network.
 
 
-## Image Resize Events TODO: is code specific, move
+<!-- ## Image Resize Events TODO: is code specific, move
 A large portion of a typical network's processors has Images as inputs and outputs. In order to keep track of a proper image resolution, the *Canvas* which displays
 the final resulting image, emits resize events whenever
-the canvas resolution is adapted.
+the canvas resolution is adapted. -->

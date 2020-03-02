@@ -72,7 +72,7 @@ plw.show()
 See the full example [here](https://github.com/inviwo/inviwo/blob/master/apps/inviwopyapp/inviwo.py).
 
 
-## Modifying Inviwo networks with Python
+<!-- ## Modifying Inviwo networks with Python
 This section presents some sensible modifications to the networks inside Python. Note that you should always define the very majority of your workspace inside the normal Inviwo GUI. Once your network works there, all you usually want to do is passing inputs from Python to your network and retrieving results from your network into Python.
 
-TODO: find good way to do this
+TODO: find good way to do this -->

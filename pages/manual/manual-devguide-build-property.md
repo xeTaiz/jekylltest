@@ -18,6 +18,6 @@ Similar to the ["Build your own Processor" guide](manual-devguide-build-processo
 
 Inviwo-meta does currently not have a special argument to create properties. That means you need to use the standard file creation default arguments. This will create the header and source and will add them to CMake. You will need to register the property in the module manually.
 
-## Composite Property
+<!-- ## TODO: Composite Property
 
-## Serialization
+## TODO: Serialization -->
