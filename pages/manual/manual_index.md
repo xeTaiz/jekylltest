@@ -1,11 +1,17 @@
 ---
 title: Inviwo Documentation
 summary: "Inviwo User and Developer Guides"
-sidebar: manual_sidebar
 permalink: manual_index.html
+sidebar: manual_sidebar
+full_sidebar: true
 folder: manual
 ---
-
+<!-- Expand sidebar -->
+<script>
+    $(document).ready(function() {
+        $("#mysidebar").navgoco('toggle', true);
+    });
+</script>
 # Inviwo Documentation
 
 Welcome to the Inviwo Documentation. Find an overview over all our guides in the sidebar to the left.
